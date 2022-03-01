@@ -3,7 +3,7 @@ from django.contrib import messages
 from .models import UserT, WorkerT, ProjectT, AssignmentT, EvaluationReportT
 
 def demo(request):
-    return render(request, 'hris/demo.html')
+    return render(request, 'hris/dashboard.html')
 
 def projects(request):
     project_objects = ProjectT.objects.all()
