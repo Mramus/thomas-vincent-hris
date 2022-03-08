@@ -3,64 +3,64 @@
 
 {% block content %}
 <h1>Create New Project Profile</h1>
-<div>
+<div class="col-md-5 pt-2">
     <form class="add-form" method="POST" action="{% url 'add_project' %}"> {% csrf_token %}
         <div class="form-group row">
-            <label for="ptitle" class="col-form-label">Project Title:</label>
+            <label for="ptitle" class="col-sm-4 col-form-label">Project Title:</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="ptitle" name="ptitle">
+              <input type="text" class="form-control" id="ptitle" name="ptitle" required maxlength="50">
             </div>
         </div>
         <div class="form-group row">
-            <label for="ptype" class="col-form-label">Project Type:</label>
+            <label for="ptype" class="col-sm-4 col-form-label">Project Type:</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="ptype" name="ptype">
+              <input type="text" class="form-control" id="ptype" name="ptype" required>
             </div>
         </div>
         <div class="form-group row">
-            <label for="plocation" class="col-form-label">Location:</label>
+            <label for="plocation" class="col-sm-4 col-form-label">Location:</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="plocation" name="plocation">
+              <input type="text" class="form-control" id="plocation" name="plocation" required maxlength="100">
             </div>
         </div>
         <div class="form-group row">
-            <label for="pclient" class="col-form-label">Client</label>
+            <label for="pclient" class="col-sm-4 col-form-label">Client:</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="pclient" name="pclient">
+              <input type="text" class="form-control" id="pclient" name="pclient" required maxlength="50">
             </div>
         </div>
         <div class="form-group row">
-            <label for="pclientcontact" class="col-form-label">Client Contact Number</label>
+            <label for="pclientcontact" class="col-sm-4 col-form-label">Client Contact Number:</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="pclientcontact" name="pclientcontact">
+              <input type="text" class="form-control" id="pclientcontact" name="pclientcontact" required minlength="7" maxlength="11">
             </div>
         </div>
         <div class="form-group row">
-            <label for="ppic" class="col-form-label">Project-in-Charge (PIC)</label>
+            <label for="ppic" class="col-sm-4 col-form-label">Project-in-Charge (PIC):</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="ppic" name="ppic">
+              <input type="text" class="form-control" id="ppic" name="ppic" required maxlength="50">
             </div>
         </div>
         <div class="form-group row">
-            <label for="ppiccontact" class="col-form-label">Project-in-Charge Contact Number</label>
+            <label for="ppiccontact" class="col-sm-4 col-form-label">PIC Contact Number:</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="ppiccontact" name="ppiccontact">
+              <input type="text" class="form-control" id="ppiccontact" name="ppiccontact" required minlength="7" maxlength="11">
             </div>
         </div>
         <div class="form-group row">
             <label for="pstartdate" class="col-sm-4 col-form-label">Start Date:</label>
             <div class="col-sm-7">
-              <input type="date" class="form-control" id="pstartdate" name="pstartdate">
+              <input type="date" class="form-control" id="pstartdate" name="pstartdate" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="penddate" class="col-sm-4 col-form-label">End Date:</label>
             <div class="col-sm-7">
-              <input type="date" class="form-control" id="penddate" name="penddate">
+              <input type="date" class="form-control" id="penddate" name="penddate" required>
             </div>
         </div>
         <div class="form-group row">
-            <label for="button" class="col-form-label"></label>
+            <label for="button" class="col-sm-4 col-form-label"></label>
             <div class="col-sm-7 text-right">
                 <button type="submit" class="mt-3 btn btn-outline-secondary">Create New Project</button>
             </div>
