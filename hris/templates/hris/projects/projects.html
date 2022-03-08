@@ -36,7 +36,7 @@
             <td> {{ p.end_date }} </td>
             <td> {{ p.client }} </td>
             <td> {{ p.project_in_charge }} </td>
-            <td><a href="#"></a>View</td>
+            <td><a href="{% url 'view_project_details' pk=p.pk %}">View</a></td>
         </tr>
         {% endfor %}
     </tbody>
