@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import UserT, WorkerT, ProjectT, AssignmentT, EvaluationReportT
 
-def demo(request):
+def dashboard(request):
     return render(request, 'hris/dashboard.html')
 
 def projects(request):
