@@ -7,7 +7,7 @@ def dashboard(request):
 
 def projects(request):
     project_objects = ProjectT.objects.all()
-    return render(request, 'hris/projects.html', {'projects':project_objects})
+    return render(request, 'hris/projects/projects.html', {'projects':project_objects})
 
 def add_project(request):
     if(request.method=="POST"):
@@ -23,4 +23,4 @@ def add_project(request):
         ProjectT.objects.create(project_title=ptitle, project_type=ptype, project_location=plocation, client=pclient, client_contact_number=pclientcontact, project_in_charge=ppic, project_in_charge_contact_number=ppiccontact, start_date=pstartdate, end_date=penddate)
         return redirect('projects')
     else:
-        return render(request, 'hris/add_project.html')
+        return render(request, 'hris/projects/add_project.html')
