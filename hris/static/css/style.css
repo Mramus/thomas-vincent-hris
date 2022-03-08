@@ -186,3 +186,24 @@ header label span {
     display: inline-block;
     color: #5F5F6E;
 }
+
+table{
+    position: absolute;
+    width: 75%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px #C4C4C4;
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+}
+td , th{
+    padding: 15px 20px;
+    text-align: center;
+    background-color: #ffffff;
+   }
+
+th {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
