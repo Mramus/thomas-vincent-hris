@@ -5,6 +5,7 @@ from .models import UserT, WorkerT, ProjectT, AssignmentT, EvaluationReportT
 def dashboard(request):
     return render(request, 'hris/dashboard.html')
 
+# Projects Page
 def projects(request):
     project_objects = ProjectT.objects.all()
     return render(request, 'hris/projects/projects.html', {'projects':project_objects})
@@ -28,3 +29,9 @@ def add_project(request):
 def view_project_details(request, pk):
     project_details = get_object_or_404(ProjectT, pk=pk)
     return render(request, 'hris/projects/view_project.html', {'project': project_details})
+
+
+# Workers Page
+def workers(request):
+    worker_objects = WorkerT.objects.all()
+    return render(request, 'hris/workers/workers.html', {'workers': worker_objects})

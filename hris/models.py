@@ -81,6 +81,7 @@ class WorkerT(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=30)
     contact_number = models.CharField(max_length=16, blank=True, null=True)
+    image = models.ImageField()
 
     class Meta:
         managed = True
