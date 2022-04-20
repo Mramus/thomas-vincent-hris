@@ -35,3 +35,14 @@ def view_project_details(request, pk):
 def workers(request):
     worker_objects = WorkerT.objects.all()
     return render(request, 'hris/workers/workers.html', {'workers': worker_objects})
+
+def add_worker(request):
+    if request.method == 'POST':
+        ffirst_name = request.POST.get('first_name')
+        flast_name = request.POST.get('last_name')
+        fimage = request.FILES.get('image')
+
+        WorkerT.objects.create(first_name=ffirst_name, last_name=flast_name, image=fimage)
+        return redirect('workers')
+    else:
+        return render(request, 'hris/workers/add_worker.html')
