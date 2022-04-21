@@ -15,7 +15,7 @@
 </div>
 {% for w in workers %}
     <div class='app_container'>
-        <a href='#'>
+        <a href="{% url 'worker_details' pk=w.worker_id %}">
             <img src='{{ MEDIA_URL }}{{ w.image }}' class='app_pic'/>
             <section class='app_name'>{{ w.first_name }} {{ w.last_name }}</section>
         </a>
