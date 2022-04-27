@@ -28,3 +28,20 @@ def add_project(request):
 def view_project_details(request, pk):
     project_details = get_object_or_404(ProjectT, pk=pk)
     return render(request, 'hris/projects/view_project.html', {'project': project_details})
+
+def edit_project_details(request, pk):
+    if(request.method=='POST'):
+        ptitle = request.POST.get('ptitle')
+        ptype = request.POST.get('ptype')
+        plocation = request.POST.get('plocation')
+        pclient = request.POST.get('pclient')
+        pclientcontact = request.POST.get('pclientcontact')
+        ppic = request.POST.get('ppic')
+        ppiccontact = request.POST.get('ppiccontact')
+        pstartdate = request.POST.get('pstartdate')
+        penddate = request.POST.get('penddate')     
+        ProjectT.objects.update(project_title=ptitle, project_type=ptype, project_location=plocation, client=pclient, client_contact_number=pclientcontact, project_in_charge=ppic, project_in_charge_contact_number=ppiccontact, start_date=pstartdate, end_date=penddate)
+        return redirect('projects')
+    else:
+        project_details = get_object_or_404(ProjectT, pk=pk)
+        return render(request, 'hris/projects/edit_project.html', {'project': project_details})
